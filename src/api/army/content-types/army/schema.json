@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "armies",
+  "info": {
+    "singularName": "army",
+    "pluralName": "armies",
+    "displayName": "Army",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "playerId": {
+      "type": "string"
+    },
+    "startPositionX": {
+      "type": "biginteger"
+    },
+    "startPositionY": {
+      "type": "biginteger"
+    },
+    "destinationPositionX": {
+      "type": "biginteger"
+    },
+    "destinationPositionY": {
+      "type": "biginteger"
+    },
+    "startTime": {
+      "type": "time"
+    },
+    "arrivalTime": {
+      "type": "time"
+    },
+    "armySpeedMetersPerMin": {
+      "type": "float"
+    }
+  }
+}
