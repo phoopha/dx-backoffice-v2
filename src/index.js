@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   /**
@@ -16,5 +16,22 @@ module.exports = {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  async bootstrap({ strapi }) {
+    strapi.db.lifecycles.subscribe({
+      models: ["plugin::users-permissions.user"],
+
+      async afterCreate(event) {
+        const { result, params } = event;
+        console.log("result:>>", result);
+        await strapi.entityService.create("api::city.city", {
+          data: {
+            X: Math.floor(Math.random() * 1201),
+            Y: Math.floor(Math.random() * 1201),
+            user: result.id,
+            publishedAt: new Date(),
+          },
+        });
+      },
+    });
+  },
 };
