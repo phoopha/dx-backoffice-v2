@@ -16,10 +16,14 @@
       "type": "string"
     },
     "X": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "max": "1199",
+      "min": "1"
     },
     "Y": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "max": "1199",
+      "min": "1"
     },
     "user": {
       "type": "relation",
