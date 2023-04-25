@@ -26,6 +26,11 @@ const myExtraRoutes = [
     path: "/cities",
     handler: "api::city.city.deleteMany",
   },
+  {
+    method: "GET",
+    path: "/cities/me",
+    handler: "api::city.city.myCity",
+  },
 ];
 
 module.exports = customRouter(defaultRouter, myExtraRoutes);

@@ -12,4 +12,10 @@ module.exports = createCoreService("api::city.city", ({ strapi }) => ({
 
     return strapi.entityService.deleteMany(uid, params);
   },
+
+  myCity(opts, uid) {
+    const params = { ...opts };
+
+    return strapi.entityService.myCity(uid, params);
+  },
 }));
